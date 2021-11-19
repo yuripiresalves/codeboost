@@ -609,6 +609,7 @@
     }
     .swiper-pagination {
       position: relative;
+      width: auto;
       .swiper-pagination-bullet {
         background-color: $brand-yellow;
         opacity: 0.3;
@@ -723,14 +724,17 @@
       &.mockup-01 {
         bottom: 4.7rem;
         left: 0;
+        z-index: 2;
       }
       &.mockup-02 {
         top: 0.3rem;
         left: 25.3rem;
+        z-index: 2;
       }
       &.circle {
         right: 0;
         bottom: 0;
+        z-index: 0;
       }
     }
   }
