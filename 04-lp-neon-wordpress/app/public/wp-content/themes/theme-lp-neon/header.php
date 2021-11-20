@@ -51,6 +51,8 @@
       property="twitter:image"
       content="https://lp-neon.netlify.app/share-img.jpg"
     />
+
+    <?php wp_head(); ?>
   </head>
   <body>
     <header>

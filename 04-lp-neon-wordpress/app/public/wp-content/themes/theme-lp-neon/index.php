@@ -1,4 +1,4 @@
-<?php get_header() ?>
+<?php get_header(); ?>
   <section class="s-hero">
     <div class="container">
       <div class="text" data-aos="fade-right">
@@ -318,4 +318,4 @@
       </div>
     </div>
   </section>
-<?php get_footer() ?>
+<?php get_footer(); ?>
