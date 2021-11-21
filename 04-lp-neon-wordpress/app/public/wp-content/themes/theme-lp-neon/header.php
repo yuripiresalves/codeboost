@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/main.min.css" />
 
     <!-- Primary Meta Tags -->
-    <title>Projeto - Landing Page Neon</title>
+    <title><?php bloginfo('name'); ?> <?php wp_title('-') ?></title>
     <meta name="title" content="Redesign Landing Page Neon" />
     <meta
       name="description"
