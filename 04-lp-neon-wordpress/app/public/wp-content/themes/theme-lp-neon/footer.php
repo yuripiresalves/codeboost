@@ -72,10 +72,14 @@
           </div>
           <div class="item">
             <strong>Ajuda</strong>
-            <ul>
-              <li><a href="">Ouvidoria</a></li>
-              <li><a href="">Fale conosco</a></li>
-            </ul>
+            <?php
+              $args = array(
+                'menu' => 'Ajuda Menu Footer',
+                'theme_location' => 'ajuda-menu-footer',
+                'container' => false
+              );
+              wp_nav_menu( $args );
+            ?>
           </div>
         </nav>
         <div class="btns">

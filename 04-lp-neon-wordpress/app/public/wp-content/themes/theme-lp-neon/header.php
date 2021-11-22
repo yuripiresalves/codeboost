@@ -61,13 +61,16 @@
           <img src="<?php echo get_template_directory_uri() ?>/img/logo.svg" alt="Logo Neon" />
         </a>
         <nav>
-          <ul>
-            <li><a href="">Produtos</a></li>
-            <li><a href="">Conta digital PJ</a></li>
-            <li><a href="">Quem somos</a></li>
-            <li><a href="">Blog</a></li>
-            <li><a href="">Ajuda</a></li>
-          </ul>
+
+          <?php
+            $args = array(
+              'menu' => 'Header Principal',
+              'theme_location' => 'header-principal',
+              'container' => false
+            );
+            wp_nav_menu( $args );
+          ?>
+
           <a href="" class="btn-secondary white">Abra sua conta digital</a>
           <button class="btn-mobile">
             <img src="<?php echo get_template_directory_uri() ?>/img/btn-mobile.svg" alt="" />
