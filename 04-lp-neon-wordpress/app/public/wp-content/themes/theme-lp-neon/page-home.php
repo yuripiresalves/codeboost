@@ -9,47 +9,29 @@
   <section class="s-hero">
     <div class="container">
       <div class="text" data-aos="fade-right">
-        <h3>Abra sua conta, é só baixar o app!</h3>
-        <h1>A conta digital certa pra cuidar bem do seu dinheiro</h1>
-        <button class="btn-primary">Abra sua conta digital</button>
+        <h3><?php the_field('subtitulo_section_hero') ?></h3>
+        <h1><?php the_field('titulo_section_hero') ?></h1>
+        <button class="btn-primary"><?php the_field('texto_botao') ?></button>
         <ul>
+        <?php if( have_rows('cadastrar_itens_da_section_hero') ): while ( have_rows('cadastrar_itens_da_section_hero') ) : the_row(); ?>
+
           <li>
             <div class="icon">
               <img
-                src="<?php echo get_template_directory_uri() ?>/img/icon-anuidade.svg"
-                alt="Icone nde cartão sem anuidade"
+                src="<?php the_sub_field('icone_item') ?>"
+                alt="Icone de cartão sem anuidade"
               />
             </div>
-            <span
-              >Cartão sem<br />
-              anuidade</span
+            <span><?php the_sub_field('texto_item') ?></span
             >
           </li>
-          <li>
-            <div class="icon">
-              <img
-                src="<?php echo get_template_directory_uri() ?>/img/icon-conta-digital.svg"
-                alt="Icone de conta digital"
-              />
-            </div>
-            <span
-              >Conta digital<br />
-              100% grátis</span
-            >
-          </li>
-          <li>
-            <div class="icon">
-              <img src="<?php echo get_template_directory_uri() ?>/img/icon-dinheiro.svg" alt="Icone de dinheiro" />
-            </div>
-            <span
-              >Seu dinheiro<br />
-              rendendo mais</span
-            >
-          </li>
+        
+
+        <?php endwhile; else : endif;?>
         </ul>
       </div>
       <div class="area-image">
-        <h2 data-aos="fade-left">Banco 100% digital</h2>
+        <h2 data-aos="fade-left"><?php the_field('texto_do_banco_100_digital') ?></h2>
         <div class="image" data-aos="zoom-in">
           <img
             src="<?php echo get_template_directory_uri() ?>/img/card-neon-frnt.png"
