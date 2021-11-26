@@ -142,85 +142,25 @@
     <div class="container">
       <div class="top" data-aos="fade-right">
         <h2>
-          <span>Prático, fácil, moderno</span>Você resolve tudo sem estresse
-          😊
+          <span><?php the_field('titulo_secundario_depoimentos') ?></span><?php the_field('titulo_principal_depoimentos') ?>
         </h2>
         <div class="swiper-pagination"></div>
       </div>
       <div class="slide-depoimentos" data-aos="fade-up">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="card-depoimento">
-              <div class="user">
-                <strong>@yurialves</strong>
-                <img src="<?php echo get_template_directory_uri() ?>/img/icon-twiiter.svg" alt="Twitter" />
+
+          <?php if( have_rows('cadastrar_depoimentos') ): while ( have_rows('cadastrar_depoimentos') ) : the_row(); ?>
+            <div class="swiper-slide">
+              <div class="card-depoimento">
+                <div class="user">
+                  <strong><?php the_sub_field('usuario_depoimento') ?></strong>
+                  <img src="<?php echo get_template_directory_uri() ?>/img/icon-twiiter.svg" alt="Twitter" />
+                </div>
+                <p><?php the_sub_field('texto_depoimento') ?></p>
               </div>
-              <p>
-                Valeu @banconenon! Linda embalagem e o cartão tbm é lindo!
-                Muito amor por esse banco #bancoNeon
-              </p>
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card-depoimento">
-              <div class="user">
-                <strong>@kleriene18</strong>
-                <img src="<?php echo get_template_directory_uri() ?>/img/icon-twiiter.svg" alt="Twitter" />
-              </div>
-              <p>
-                Eu uso o Neon pra render o pouquinho que eu tenho. Como disse
-                minha amiga Bruna, um dia eu abro o app de novo e PA: tô rica.
-              </p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card-depoimento">
-              <div class="user">
-                <strong>@mzltweet</strong>
-                <img src="<?php echo get_template_directory_uri() ?>/img/icon-twiiter.svg" alt="Twitter" />
-              </div>
-              <p>
-                Só por ter um cartão virtual com bloqueio fácil no app, já
-                ganha e muito na segurançã pro cliente.
-              </p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card-depoimento">
-              <div class="user">
-                <strong>@yurialves</strong>
-                <img src="<?php echo get_template_directory_uri() ?>/img/icon-twiiter.svg" alt="Twitter" />
-              </div>
-              <p>
-                Valeu @banconenon! Linda embalagem e o cartão tbm é lindo!
-                Muito amor por esse banco #bancoNeon
-              </p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card-depoimento">
-              <div class="user">
-                <strong>@kleriene18</strong>
-                <img src="<?php echo get_template_directory_uri() ?>/img/icon-twiiter.svg" alt="Twitter" />
-              </div>
-              <p>
-                Eu uso o Neon pra render o pouquinho que eu tenho. Como disse
-                minha amiga Bruna, um dia eu abro o app de novo e PA: tô rica.
-              </p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card-depoimento">
-              <div class="user">
-                <strong>@mzltweet</strong>
-                <img src="<?php echo get_template_directory_uri() ?>/img/icon-twiiter.svg" alt="Twitter" />
-              </div>
-              <p>
-                Só por ter um cartão virtual com bloqueio fácil no app, já
-                ganha e muito na segurançã pro cliente.
-              </p>
-            </div>
-          </div>
+          <?php endwhile; else : endif;?>          
+        </div>
         </div>
       </div>
     </div>
