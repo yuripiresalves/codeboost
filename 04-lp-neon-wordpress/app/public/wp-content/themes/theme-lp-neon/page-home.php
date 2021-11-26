@@ -170,39 +170,26 @@
     <div class="container">
       <div class="text" data-aos="fade-right">
         <h2>
-          <span>Aproveite</span>Domine o seu dinheiro com uma conta 100%
-          digital
+          <span><?php the_field('subtitulo_conta_digital') ?></span>
+          <?php the_field('titulo_conta_digital') ?>
         </h2>
         <ul>
-          <li>
-            <div class="icon">
-              <img src="<?php echo get_template_directory_uri() ?>/img/icon-cartao-internacional.svg" alt="" />
-            </div>
-            <div class="info">
-              <h4>Cartão visa internacional</h4>
-              <p>Tenha facilidades e benefícios para o seu dia a dia.</p>
-            </div>
-          </li>
-          <li>
-            <div class="icon">
-              <img src="<?php echo get_template_directory_uri() ?>/img/icon-taxa-zero.svg" alt="" />
-            </div>
-            <div class="info">
-              <h4>Zero mensalidade e anuidade</h4>
-              <p>Não gaste grana pagando taxas desnecessárias.</p>
-            </div>
-          </li>
-          <li>
-            <div class="icon">
-              <img src="<?php echo get_template_directory_uri() ?>/img/icon-poupanca.svg" alt="" />
-            </div>
-            <div class="info">
-              <h4>Investimento que rende mais que a poupança</h4>
-              <p>Invista o seu dinheiro de maneira mais rentável.</p>
-            </div>
-          </li>
+          <?php if( have_rows('cadastrar_itens_conta_digital') ): while ( have_rows('cadastrar_itens_conta_digital') ) : the_row(); ?>
+            <li>
+              <div class="icon">
+                <img src="<?php the_sub_field('icone_item') ?>" alt="" />
+              </div>
+              <div class="info">
+                <h4><?php the_sub_field('titulo_icone') ?></h4>
+                <p><?php the_sub_field('descricao_item') ?></p>
+              </div>
+            </li>
+          
+
+          <?php endwhile; else : endif;?>
+          
         </ul>
-        <button class="btn-primary">Abra sua conta digital</button>
+        <button class="btn-primary"><?php the_field('texto_botao_conta_digital') ?></button>
       </div>
       <div class="image">
         <img
