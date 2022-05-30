@@ -36,3 +36,16 @@ allFilters.forEach((filter, index) => {
     filter.classList.add('active');
   });
 });
+
+const btnOpenModal = document.querySelector('.js-open-modal');
+const btnCloseModal = document.querySelector('.js-close');
+
+btnOpenModal.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  document.documentElement.classList.add('show-modal');
+});
+
+btnCloseModal.addEventListener('click', () => {
+  document.documentElement.classList.remove('show-modal');
+});
