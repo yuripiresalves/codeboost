@@ -12,7 +12,6 @@ document.addEventListener('scroll', fixedMenu);
 
 const allFilters = document.querySelectorAll('.js-btns button');
 const tabPane = document.querySelectorAll('.js-bottom');
-console.log(allFilters, tabPane);
 
 allFilters.forEach((filter, index) => {
   filter.addEventListener('click', () => {
